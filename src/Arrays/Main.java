@@ -55,7 +55,23 @@ public class Main {
                 +Arrays.binarySearch(abc, 'h'));
         System.out.println("En el array 2, encontramso que la letra 'h' debería estar en la posición "
                 +Arrays.binarySearch(abc2, 'h'));
+        System.out.println("");
 
+        // Busco la posición que debería estar. Hay que diferenciar si ya se encuentra o no
+        int ultimaPosicion = abc.length-1;
+        int indicePosicion = (Arrays.binarySearch(abc,'b'));
+
+        if (indicePosicion<0){
+            indicePosicion = -(indicePosicion)-1;
+        }
+
+        // Desplazo desde indice posición hasta el final los elementos una posición para hacer hueco
+        for (int i = ultimaPosicion; i >=indicePosicion ; i--) {
+            abc2[ultimaPosicion+1]=abc2[ultimaPosicion];
+        }
+        abc2[indicePosicion]='h';
+
+        System.out.println(Arrays.toString(abc2));
 
 
 
